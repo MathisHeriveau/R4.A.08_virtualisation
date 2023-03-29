@@ -31,8 +31,9 @@ simple pour l’utilisateur qui souhaiterait utiliser votre projet.
 
 1. Cloner le projet
 2. Se placer dans le dossier du projet
-3. Lancer la commande `docker-compose up -d`
-4. Se rendre sur `http://localhost:4200/`
+3. Lancer la commande `docker-compose config` pour vérifier la configuration
+4. Lancer la commande `docker-compose up -d`
+5. Se rendre sur `http://localhost:8010/`
 
 
 ### Architecture
