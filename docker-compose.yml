@@ -1,17 +1,29 @@
 version: '3.9'
 
 services:
-  # Execution du dockerfile
-  web:
+  # Execution du builder
+  builder:
     build:
       context: .
       dockerfile: dockerfile
     ports:
       - "8010:80"
-
-
-
-
+    volumes:
+      - ./angular-nginx-docker:/app
+    networks:
+      - MyDevStack
+  # Execution du serveur json
+  json-server:
+    container_name: json-server
+    build:
+      context: .
+      dockerfile: dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./db.json:/app/db.json
+    networks:
+      - MyDevStack
 
 volumes:
   db_data: {}
